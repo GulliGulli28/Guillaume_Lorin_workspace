@@ -1,0 +1,5 @@
+Question b:
+
+
+Question c:
+en faisant r.draw(4), on fait du transtipage ascendant, car on fait appelle à une méthode de la classe mère.

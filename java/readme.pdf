@@ -1,0 +1,7 @@
+exercice 1
+c) L'erreur est une erreur de syntaxe, il faut ecrire pour ne pas avoir d'erreur:
+new GenericSafe<GenericSafe<Gemstone>>(5)
+
+e) On ne procède pas de cette manière car sinon il faudrait implémenter des méthodes pour tout les types possible, ce qui est contraignant.
+
+fini à l'exercice 3.c

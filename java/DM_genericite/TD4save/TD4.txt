@@ -1,0 +1,9 @@
+Exercice 1
+
+a)
+Erreur de syntaxe: new GenericSafe«GenericSafe»Gemstone>(5) devrait être new GenericSafe<GenericSafe<Gemstone>>(5)
+
+e)
+Si l'on avait contraint l'interface, il aurait fallut créer des instances pour tout les types possible, ce qui aurait été contraignant.
+
+    
