@@ -1,0 +1,34 @@
+%{
+#include <stdio.h>
+
+int yylex();
+
+%}
+
+%token INTEGER
+
+%%
+S : E ';'       {printf ("Expression reconnue \n");}
+  ;
+
+E : E '+' T  {printf("E -> E+T\n");}
+| T        {printf("E -> T\n"); }
+  ;
+
+T : T '*' F  {printf("T -> T * F\n"); }
+| F        {printf("T -> F\n"); } 
+  ;
+
+F : '(' E ')' {printf("F ->  ( E )\n"); } 
+| INTEGER   {printf("F -> INTEGER (%d)\n", $1); } 
+  ;
+
+%%
+int main(){
+  yyparse();
+}
+
+yyerror (char *s)
+{
+	
+}
