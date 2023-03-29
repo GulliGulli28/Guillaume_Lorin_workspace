@@ -1,0 +1,81 @@
+$_server variable global à toute les pages web de l'application
+
+ex) $_server[REQUEST_METHOD]
+
+$_POST
+$_GET
+$_SESSION (pour garder "en souvenir" l'état) il faut démarrer la session en php:
+<?php 
+    session_start(); //va créer en mémoire un tableau alloué à cette session identifié par un n° de série
+    session_destroy();
+?>
+
+ex) dans le tableau d'identifiant #123: x=10
+$_SESSION["x"]=10;
+Cookie: PHPIDSESSION=123;
+sur internet j'ai vu plutot $session_id 
+
+créer cookies en php:
+setcookie(name,value,expires,path,domain,secure, httponly);
+
+ex)
+<?php
+    $cookie_name = "user";
+    $cookie_value = "John Doe";
+    setcookie($cookie_name, $cookie_value, time()+(86400*30),"/"); //86400 = 1 day
+?>
+
+<?php
+    if(!isset($_COOKIE[$cookie_name]){
+        echo "cookie named " . $cookie_name . "is not set";
+    }else{
+        echo "cookie named " . $cookie_name . "is set <br>";
+        echo "value: " . $_Cookie[$cookie_value];
+    }
+?>
+
+application exemple
+<?php
+    session_start(); 
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+    $_SESSION["favorite_color"] = "yellow";
+    echo "favorite color is " . $_SESSION["favorite_color"] . "<br>";
+    session_unser(); // remove all variables
+
+    session_destroy();
+?>
+
+</body>
+</html>
+
+
+ex avec javascript index.js 
+
+let Dog = function (name,age){
+    this.name = name;
+    this.age = age;
+    this.speak= function{
+        console.log(this.name,",",this.age,"years old");
+    }
+}
+
+let d1 = new Dog("F",3);
+let d2 = new Dog("C",4);
+
+d1.speak();
+
+console.log(d1.speak === d2.speak); // va return false
+
+Dog.prototype.bark = function(){
+    console.log("woof woof");
+}
+
+return;
+
+A la création de Dog, un tableau Dog.prototype va se créer, avec un constructor, et donc à l'appelle de Dog.prototype, cela renvoie le constructor.
+Dog.prototype va être égallement équipé de .proto qui pointe sur object.prototype.
