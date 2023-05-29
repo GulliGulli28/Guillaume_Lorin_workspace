@@ -1,0 +1,22 @@
+{
+  "name": "tutoangular",
+  "version": "1.0.0",
+  "description": "tuto-for-angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GulliGulli28/Guillaume_Lorin_workspace.git"
+  },
+  "author": "Guillaume Lorin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GulliGulli28/Guillaume_Lorin_workspace/issues"
+  },
+  "homepage": "https://github.com/GulliGulli28/Guillaume_Lorin_workspace#readme",
+  "dependencies": {
+    "angular": "^1.8.2"
+  }
+}
